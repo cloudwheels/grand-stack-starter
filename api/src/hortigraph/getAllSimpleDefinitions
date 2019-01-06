@@ -1,0 +1,4 @@
+//get all defs en_gb
+MATCH (def:GlossaryEntry)-[lang:defines_in_glossary]-(le:LexiconEntry)
+WHERE lang.lang= "en_gb" and exists(le.en_gb)
+RETURN le.en_gb, lang.lang, def.text
